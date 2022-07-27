@@ -2,19 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class cSudoCube : MonoBehaviour
 {
-    [SerializeField]
-    TMP_Text _sudoText;
-    public int _sudoValue;
+    
+    public TMP_Text _sudoText;
+    int _sudoValue;
 
     public int SudoValue
     {
         get { return _sudoValue; }
         set
         {
-            _sudoValue = value;
-            _sudoText.text = _sudoValue.ToString();
+            try
+            {
+                _sudoValue = value;
+                _sudoText.text = value.ToString();
+            }
+            catch (System.Exception x)
+            {
+                Debug.LogError(x.Message);
+            }
         }
     }
 }
