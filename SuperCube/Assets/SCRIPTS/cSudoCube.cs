@@ -7,6 +7,8 @@ public class cSudoCube : MonoBehaviour
 {
     
     public TMP_Text _sudoText;
+    public GameObject _unknownPanel;
+
     int _sudoValue;
 
     public int SudoValue
@@ -18,6 +20,7 @@ public class cSudoCube : MonoBehaviour
             {
                 _sudoValue = value;
                 _sudoText.text = value.ToString();
+                _unknownPanel.SetActive(true);
             }
             catch (System.Exception x)
             {
